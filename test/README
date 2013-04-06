@@ -1,0 +1,8 @@
+To compile:
+===========
+gcc -I../ -L../ -llaio x.c
+
+To run:
+===========
+1. export LD_LIBRARY_PATH=../
+2. ./a.out

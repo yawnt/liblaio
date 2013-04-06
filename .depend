@@ -1,0 +1,29 @@
+# -O -pipe -march=pentiumpro -Wall -g -O -fpic -fPIC kse_asm.S laio_syscall.S laio_api.c upcall_handler.c
+kse_asm.o: kse_asm.S /usr/include/machine/asm.h /usr/include/sys/cdefs.h
+laio_syscall.o: laio_syscall.S
+laio_api.o: laio_api.c /usr/include/stdlib.h /usr/include/sys/cdefs.h \
+  /usr/include/sys/_null.h /usr/include/sys/_types.h \
+  /usr/include/machine/_types.h /usr/include/errno.h \
+  /usr/include/assert.h upcall_handler.h /usr/include/sys/kse.h \
+  /usr/include/sys/ucontext.h /usr/include/sys/signal.h \
+  /usr/include/sys/_sigset.h /usr/include/machine/signal.h \
+  /usr/include/machine/trap.h /usr/include/machine/ucontext.h \
+  /usr/include/sys/time.h /usr/include/sys/_timeval.h \
+  /usr/include/sys/types.h /usr/include/machine/endian.h \
+  /usr/include/sys/select.h /usr/include/sys/timespec.h \
+  /usr/include/time.h /usr/include/sys/queue.h /usr/include/setjmp.h \
+  /usr/include/machine/setjmp.h laio_api.h
+upcall_handler.o: upcall_handler.c /usr/include/stdlib.h \
+  /usr/include/sys/cdefs.h /usr/include/sys/_null.h \
+  /usr/include/sys/_types.h /usr/include/machine/_types.h \
+  /usr/include/string.h /usr/include/strings.h /usr/include/stdio.h \
+  /usr/include/sys/types.h /usr/include/machine/endian.h \
+  /usr/include/sys/select.h /usr/include/sys/_sigset.h \
+  /usr/include/sys/_timeval.h /usr/include/sys/timespec.h \
+  /usr/include/sys/kse.h /usr/include/sys/ucontext.h \
+  /usr/include/sys/signal.h /usr/include/machine/signal.h \
+  /usr/include/machine/trap.h /usr/include/machine/ucontext.h \
+  /usr/include/sys/time.h /usr/include/time.h /usr/include/sys/sysctl.h \
+  /usr/include/sys/queue.h /usr/include/assert.h /usr/include/err.h \
+  /usr/include/unistd.h /usr/include/sys/unistd.h upcall_handler.h \
+  /usr/include/setjmp.h /usr/include/machine/setjmp.h laio_api.h
